@@ -1,13 +1,12 @@
-import { Eraser, Sparkles } from 'lucide-react';
-import React, { useState } from 'react'
+import { Eraser, Sparkles } from "lucide-react";
+import React, { useState } from "react";
 
 const RemoveBackground = () => {
-
   const [input, setInput] = useState("");
-    
-      const onSubmitHandler = async(e) => {
-        e.preventDefault();
-      }
+
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+  };
 
   return (
     <div className="h-full overflow-y-scroll p-6 flex items-start flex-wrap gap-4 text-slate-700">
@@ -23,12 +22,14 @@ const RemoveBackground = () => {
         <p className="mt-6 text-sm font-medium">Upload Image</p>
         <input
           onChange={(e) => setInput(e.target.files[0])}
-          accept='image/*'
+          accept="image/*"
           type="file"
           className="w-full p-2 px-3 mt-2 outline-none text-sm rounded-md border border-gray-300 text-gray-600"
           required
         />
-        <p className='text-xs text-gray-500 font-light mt-1'>Supports JPG, PNG and other image formats</p>
+        <p className="text-xs text-gray-500 font-light mt-1">
+          Supports JPG, PNG and other image formats
+        </p>
         <button className="w-full flex justify-center items-center gap-2 bg-gradient-to-r from-[#F6AB41] to-[#FF4938] text-white px-4 py-2 mt-6 text-sm rounded-lg cursor-pointer">
           <Eraser className="w-5" />
           Remove Background
@@ -50,6 +51,6 @@ const RemoveBackground = () => {
       </div>
     </div>
   );
-}
+};
 
-export default RemoveBackground
+export default RemoveBackground;
