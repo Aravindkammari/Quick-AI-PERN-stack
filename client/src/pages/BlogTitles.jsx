@@ -21,7 +21,7 @@ const BlogTitles = () => {
       >
         <div className="flex items-center gap-3">
           <Sparkles className="w-6 text-[#8E37EB]" />
-          <h1 className="text-xl font-semibold">AI title Generator</h1>
+          <h1 className="text-xl font-semibold">AI Title Generator</h1>
         </div>
         <p className="mt-6 text-sm font-medium">keyword</p>
         <input
