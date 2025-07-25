@@ -49,7 +49,7 @@ export const generateArticle = async(req, res) => {
             })
         }
 
-        res.json({sucess:true, content});
+        res.json({success:true, content});
 
     } catch (error) {
         console.log(error.message);
@@ -95,7 +95,7 @@ export const generateBlogTitle = async(req, res) => {
             })
         }
 
-        res.json({sucess:true, content});
+        res.json({success:true, content});
 
     } catch (error) {
         console.log(error.message);
@@ -128,7 +128,7 @@ export const generateImage = async(req, res) => {
         await sql`INSERT INTO creations (user_id, prompt, content, type, publish)
         VALUES (${userId}, ${prompt}, ${secure_url}, 'image', ${publish ?? false})`
 
-        res.json({sucess:true, content : secure_url});
+        res.json({success:true, content : secure_url});
 
     } catch (error) {
         console.log(error.message);
@@ -157,7 +157,7 @@ export const removeImageBackground = async(req, res) => {
         await sql`INSERT INTO creations (user_id, prompt, content, type)
         VALUES (${userId}, 'Remove background from image', ${secure_url}, 'image')`
 
-        res.json({sucess:true, content : secure_url});
+        res.json({success:true, content : secure_url});
 
     } catch (error) {
         console.log(error.message);
@@ -187,7 +187,7 @@ export const removeImageObject = async(req, res) => {
         await sql`INSERT INTO creations (user_id, prompt, content, type)
         VALUES (${userId}, ${`removed ${object} from the image`}, ${imageUrl}, 'image')`
 
-        res.json({sucess:true, content : imageUrl});
+        res.json({success:true, content : imageUrl});
 
     } catch (error) {
         console.log(error.message);
@@ -232,7 +232,7 @@ export const resumeReview = async(req, res) => {
         await sql`INSERT INTO creations (user_id, prompt, content, type)
         VALUES (${userId}, 'Review the uploaded resume', ${content}, 'resume-review')`
 
-        res.json({sucess:true, content});
+        res.json({success:true, content});
 
     } catch (error) {
         console.log(error.message);
