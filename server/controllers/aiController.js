@@ -83,6 +83,10 @@ export const generateBlogTitle = async(req, res) => {
         });
 
         const content = response.choices[0].message.content;
+
+        if (!content) {
+            return res.json({ success: false, message: "AI did not return any content." });
+        }
         
         await sql`INSERT INTO creations (user_id, prompt, content, type)
         VALUES (${userId}, ${prompt}, ${content}, 'blog-title')`
