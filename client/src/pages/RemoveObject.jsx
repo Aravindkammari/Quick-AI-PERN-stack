@@ -11,7 +11,7 @@ const RemoveObject = () => {
   const [object, setObject] = useState("");
   const [loading, setLoading] = useState(false);
   const [content, setContent] = useState("");
-  
+
   const { getToken } = useAuth();
 
   const onSubmitHandler = async (e) => {
@@ -19,8 +19,8 @@ const RemoveObject = () => {
     try {
       setLoading(true);
 
-      if(object.split(' ').length > 1){
-        return toast('Please enter only one object name');
+      if (object.split(" ").length > 1) {
+        return toast("Please enter only one object name");
       }
 
       const formData = new FormData();
@@ -93,19 +93,16 @@ const RemoveObject = () => {
           <Scissors className="w-5 h-5 text-[#4A7AFF]" />
           <h1 className="text-xl font-semibold">Processed Image</h1>
         </div>
-        {
-          !content ? (
-            <div className="flex-1 flex justify-center items-center">
-          <div className="text-sm flex flex-col items-center gap-5 text-gray-400">
-            <Scissors className="w-9 h-9" />
-            <p>Upload an Image and click "Remove Object" to get started</p>
+        {!content ? (
+          <div className="flex-1 flex justify-center items-center">
+            <div className="text-sm flex flex-col items-center gap-5 text-gray-400">
+              <Scissors className="w-9 h-9" />
+              <p>Upload an Image and click "Remove Object" to get started</p>
+            </div>
           </div>
-        </div>
-          ) : (
-            <img src={content} alt="image" className="mt-3 w-full h-full" />
-          )
-        }
-        
+        ) : (
+          <img src={content} alt="image" className="mt-3 w-full h-full" />
+        )}
       </div>
     </div>
   );
